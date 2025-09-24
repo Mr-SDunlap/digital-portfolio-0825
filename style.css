@@ -1,0 +1,207 @@
+/* Imports */
+/* Stylesheets ========================== */
+
+/* Fonts ========================== */
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-diamond: #f0f2f8;
+  --primary-lavender: #e8eaf6;
+  --primary-slate: #94a3b8;
+  --primary-navy: #1e293b;
+
+  --base-black: #000000;
+  --base-off-black: #333333;
+  --base-white: #ffffff;
+
+  --accent-wine: #5d0e41;
+  --accent-lipstick: #ff204e;
+  --accent-orange: #fe5d26;
+  --accent-manilla: #f2c078;
+  --accent-sand: #faedca;
+
+  --ui-success-green: #46cd78;
+  --ui-error-red: #ff6b6b;
+
+  /* Font Weights for Lexend */
+  .lexend-fine {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+  }
+  .lexend-thin {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+  .lexend-regular {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .lexend-semi-bold {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+  .lexend-bold {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .lexend-black {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  /* Call to action buttons*/
+  /* Call to action buttons */
+  .primary-cta {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50vw;
+    border: solid 2px var(--base-white);
+    background: var(--primary-navy);
+    background: linear-gradient(
+      45deg,
+      rgba(30, 41, 59, 1) 0%,
+      rgba(59, 76, 99, 1) 50%,
+      rgb(144, 153, 173) 100%
+    );
+    background-size: 150% 150%;
+    animation: gradient 10s ease infinite;
+    color: var(--base-white);
+  }
+  .primary-cta-nue {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50vw;
+    background: var(--primary-navy);
+    background: linear-gradient(
+      45deg,
+      rgba(30, 41, 59, 1) 0%,
+      rgba(59, 76, 99, 1) 50%,
+      rgb(144, 153, 173) 100%
+    );
+    background-size: 150% 150%;
+    animation: gradient 10s ease infinite;
+    color: var(--base-white);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25),
+      -5px -5px 10px rgba(255, 255, 255, 0.25);
+  }
+}
+
+html {
+  font-family: "Lexend", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#hero-section {
+  background: linear-gradient(
+    -45deg,
+    var(--accent-wine),
+    var(--accent-lipstick),
+    var(--accent-orange),
+    var(--accent-manilla)
+  );
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  height: 600px;
+  position: relative;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.hero-container {
+  width: clamp(300px, 90%, 1200px);
+  margin-top: 100px;
+  margin-inline: auto;
+  border-radius: 20px;
+  height: 300px;
+  position: relative;
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    border-radius: 2em;
+  }
+}
+.glass-card {
+  width: clamp(200px, 50%, 600px);
+  padding: 20px;
+  height: 260px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 0px 0px rgba(255, 255, 255, 0);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.glass-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
